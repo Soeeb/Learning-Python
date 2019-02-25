@@ -6,10 +6,10 @@ class Gradebook():
         self.gradebook.append({"Name" : name, "Grade": grade})
 
     def checkGrades(self):
-        print(self.gradebook)
-
+        for x in range(len(self.gradebook)):
+             print (self.gradebook[x])
 
 gradebook1 = Gradebook()
-gradebook1.addGrades(input("What is their name?"), input("What is their grade?"))
+#gradebook1.addGrades(input("What is their name?"), input("What is their grade?"))
 
 gradebook1.checkGrades()
