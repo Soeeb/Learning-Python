@@ -10,18 +10,18 @@ class Result:
         self.standard = standard
         self.grade = grade
 
-def point_value(self, grade, credits):
-    if grade == "E":
-        return credits*4
-    elif grade == "M":
-        return credits*3
-    elif grade =="A":
-        return credits*2
-    elif grade =="NA":
-        return credits*1
+    def point_value(self, grade, credits):
+        if grade == "E":
+            return credits*4
+        elif grade == "M":
+            return credits*3
+        elif grade =="A":
+            return credits*2
+        elif grade =="NA":
+            return credits*1
 
-def display(self):
-    print("Standard: %s, result %s" % (self.standard.standard_number, self.grade))
+    def display(self):
+        print("Standard: %s, result %s" % (self.standard.standard_number, self.grade))
 
 class Standard:
     def __init__(self, title, standard_number, version, credit_value):
@@ -32,11 +32,12 @@ class Standard:
 #NZQA standards
 
 class Student():
+    results = [ ]
+
     #Individual student, incorporating their NZQA results
-    def __init__(self, given_name, family_name, results  = 0):
+    def __init__(self, given_name, family_name):
         self.given_name = given_name
         self.family_name = family_name
-        self.results = results
 
     def display(self):
         print ("Given name %s, Family name %s" % (self.given_name, self.family_name))
