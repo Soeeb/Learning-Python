@@ -4,6 +4,12 @@
 #Standard: 91903, result E
 #Standard: 91905, result E
 
+class Result:
+    #When a student sits a standard, they get get a result
+    def __init__(self, standard, grade):
+        self.standard = standard
+        self.grade = grade
+
 def point_value(self, grade, credits):
     if grade == "E":
         return credits*4
@@ -27,9 +33,10 @@ class Standard:
 
 class Student():
     #Individual student, incorporating their NZQA results
-    def __init__(self, given_name, family_name):
+    def __init__(self, given_name, family_name, results  = 0):
         self.given_name = given_name
         self.family_name = family_name
+        self.results = results
 
     def display(self):
         print ("Given name %s, Family name %s" % (self.given_name, self.family_name))
@@ -37,22 +44,16 @@ class Student():
             result.display()
     #Also calculate their total Grade point score and display it
 
-    #When a student sits a standard, they get get a result
-    def results(self, standard, grade):
-        self.standard = standard
-        self.grade = grade
-
 #create arrays we could append test data
 students = [ ]
 standards = [ ]
-results = [ ]
 
 #append test data to student
 students.append(Student("John", "Martins"))
 #append test data to standards
 standards.append(Standard("Programming", 91906, 6, 1))
 #append data to results, note how indexing 
-students[0].results.append(result(standards[0], "E"))
+students[0].results.append(Result(standards[0], "E"))
 # display data
 for student in students:
     student.display()
