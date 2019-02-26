@@ -10,25 +10,26 @@ class Result:
         self.standard = standard
         self.grade = grade
 
-    def point_value(self, grade, credits):
-        if grade == "E":
-            return credits*4
-        elif grade == "M":
-            return credits*3
-        elif grade =="A":
-            return credits*2
-        elif grade =="NA":
-            return credits*1
+    def point_value(self):
+        credit = self.standard.credit_value
+        if self.grade == "E":
+            return credit*4
+        elif self.grade == "M":
+            return credit*3
+        elif self.grade =="A":
+            return credit*2
+        elif self.grade =="N":
+            return credit*1
 
     def display(self):
         print("Standard: %s, result %s" % (self.standard.standard_number, self.grade))
 
 class Standard:
-    def __init__(self, title, standard_number, version, credit_value):
+    def __init__(self, title, standard_number, credit_value, version):
         self.title = title
         self.standard_number = standard_number
         self.version  = version
-        self.credit = credit_value
+        self.credit_value = credit_value
 #NZQA standards
 
 class Student():
@@ -44,7 +45,11 @@ class Student():
         for result in self.results:
             result.display()
     #Also calculate their total Grade point score and display it
-
+    def rank_score_calc(self):
+        rank_score = 0
+        for result in self.results:
+            rank_score += result.point_value()
+        return rank_score
 #create arrays we could append test data
 students = [ ]
 standards = [ ]
@@ -55,6 +60,24 @@ students.append(Student("John", "Martins"))
 standards.append(Standard("Programming", 91906, 6, 1))
 #append data to results, note how indexing 
 students[0].results.append(Result(standards[0], "E"))
+#Test data
+students.append(Student("Philip", "Lin"))
+students.append(Student("Michael", "Brown"))
+
+standards.append(Standard("Programming", 91906, 6, 1 ))
+standards.append(Standard("Database", 91902, 4, 1))
+standards.append(Standard("Website", 91903, 4, 1))
+standards.append(Standard("Networking", 91905, 4, 1))
+
+students[1].results.append(Result(standards[0], "E"))
+students[1].results.append(Result(standards[2], "E"))
+students[1].results.append(Result(standards[3], "E"))
+students[2].results.append(Result(standards[3], "A"))
+students[2].results.append(Result(standards[1], "N"))
+
 # display data
 for student in students:
     student.display()
+
+print(students[1].rank_score_calc())
+#print(Result.point_value(students[0].results, students[0].results.standard.credit_value))
