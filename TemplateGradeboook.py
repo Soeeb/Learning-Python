@@ -32,12 +32,12 @@ class Standard:
 #NZQA standards
 
 class Student():
-    results = [ ]
 
     #Individual student, incorporating their NZQA results
     def __init__(self, given_name, family_name):
         self.given_name = given_name
         self.family_name = family_name
+        self.results = []
 
     def display(self):
         print ("Given name %s, Family name %s" % (self.given_name, self.family_name))
