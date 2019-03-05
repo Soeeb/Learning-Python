@@ -4,6 +4,18 @@ app = Flask(__name__)
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app.wsgi_app
 
+class Staff:
+    def __init__(self, lName, fName, Gender):
+        self.lName = fName
+        self.fName = lName
+        self.Gender = Gender
+
+    def gender_as_word(self):
+        if self.Gender == "M":
+            return "Male"
+        else:
+            return "Female"
+
 
 @app.route('/')
 def hello():
@@ -20,6 +32,12 @@ def simple_demo():
 def list_demo ():
     pizzas = ["Margherita", "Pepparoni", "Calzone"]
     return render_template("/list.html", pizza = pizzas)
+
+@app.route('/staff_demo')
+def staff_demo ():
+    staff = Staff("John", "Jeff", "F")
+    return render_template("/staff_demo.html", staff1 = staff)
+
 
 if __name__ == '__main__':
     import os
