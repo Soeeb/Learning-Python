@@ -12,10 +12,12 @@ class login(object):
 @app.route('/', methods = ["POST", "GET"])
 def hello():
     text = request.form
-    my_message = ""
+    result = ""
     if request.method == "POST":
-        my_message = text["input_msg"]
-    return render_template("/index.html", my_message = my_message)
+        num2 = text["input_msg2"]
+        num1 = text["input_msg"]
+        result = int(num1) + int(num2)
+    return render_template("/index.html", my_message = result)
 
 if __name__ == '__main__':
     import os
