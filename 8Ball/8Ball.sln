@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "8Ball", "8Ball\8Ball.pyproj", "{7641141F-7518-48AA-B1F0-A92E9A0B9750}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7641141F-7518-48AA-B1F0-A92E9A0B9750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7641141F-7518-48AA-B1F0-A92E9A0B9750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7641141F-7518-48AA-B1F0-A92E9A0B9750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7641141F-7518-48AA-B1F0-A92E9A0B9750}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {683B5228-FBBE-4079-A371-923F63C2FD94}
+	EndGlobalSection
+EndGlobal
