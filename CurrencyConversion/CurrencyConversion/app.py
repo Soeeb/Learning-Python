@@ -17,7 +17,7 @@ def main():
         con_holder = int(form["currency"])
         exchange = currency_rates[form["country_choice"]]
         con = round(con_holder * exchange,2)
-    return render_template("/index.html", message = con, message2 = country)
+    return render_template("/index.html", message = con, message2 = country, currencies = currency_rates)
 
 if __name__ == '__main__':
     import os
@@ -26,4 +26,4 @@ if __name__ == '__main__':
         PORT = int(os.environ.get('SERVER_PORT', '5555'))
     except ValueError:
         PORT = 5555
-    app.run(HOST, PORT)
+    app.run(HOST, PORT, debug = True)

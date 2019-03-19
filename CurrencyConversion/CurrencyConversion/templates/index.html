@@ -10,10 +10,9 @@
         <input type="text" name="currency" />
         <input type="submit" />
         <select name="country_choice">
-            <option value="AUD">AUD</option>
-            <option value="JPY">JPY</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
+            {% for currency in currencies %}
+            <option name="{{currency}}">{{currency}}</option>
+            {% endfor %}
         </select>
     </form>
    
