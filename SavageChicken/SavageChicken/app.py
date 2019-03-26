@@ -21,7 +21,9 @@ def main():
 
 @app.route('/rate', methods =["POST","GET"])
 def mainRate():
-    
+    if request.method == "POST":
+        form = request.form
+
     return render_template("rate.html", imageName = images)
 
 if __name__ == '__main__':

@@ -6,6 +6,15 @@
     <title></title>
 </head>
 <body>
-    <img src="static/images/{{request.args.get("imageName")}}" />
+    <img src="static/images/{{request.args.get("imageName")}}" />\
+    <br />
+    <form method="POST">
+        <input type="radio" name="rating" value="1"> 1<br>
+        <input type="radio" name="rating" value="2"> 2<br>
+        <input type="radio" name="rating" value="3"> 3<br />
+        <input type="radio" name="rating" value="4"> 4<br />
+        <input type="radio" name="rating" value="5"> 5<br />
+        <input type="submit" name="submit" />
+    </form>
 </body>
 </html>
