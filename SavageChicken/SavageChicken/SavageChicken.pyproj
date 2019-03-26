@@ -41,6 +41,7 @@
     <Content Include="static\images\chickentv.jpg" />
     <Content Include="static\images\chickenvacation2.jpg" />
     <Content Include="templates\index.html" />
+    <Content Include="templates\rate.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />

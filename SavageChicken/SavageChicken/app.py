@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
@@ -16,7 +17,12 @@ for filename in os.listdir(path):
 @app.route('/')
 def main():
     
-    return render_template("/index.html", images = images)
+    return render_template("index.html", images = images)
+
+@app.route('/rate', methods =["POST","GET"])
+def mainRate():
+    
+    return render_template("rate.html", imageName = images)
 
 if __name__ == '__main__':
     import os

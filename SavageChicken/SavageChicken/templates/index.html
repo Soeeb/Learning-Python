@@ -7,7 +7,9 @@
 </head>
 <body>
     {% for image in images %}
-    <img src="{{url_for('static', filename= 'images/' + image.filename )}}" />
+    <a href="rate?imageName={{ image.filename}}">
+        <img src="{{url_for('static', filename = 'images/' + image.filename)}}" />
+    </a>
     {% endfor %}
 </body>
 </html>
