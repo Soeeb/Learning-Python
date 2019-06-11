@@ -38,6 +38,7 @@
     <Content Include="templates\Login.html" />
     <Content Include="templates\Update.html" />
     <Content Include="templates\Index.html" />
+    <Content Include="templates\Users.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />
